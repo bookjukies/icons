@@ -2,7 +2,8 @@
   <style>
     :root {
       --blue: rgb(42, 117, 230);
-      --size: 50px;
+      --size: 400px;
+      --rel_Size: 20%;
       --icon_color: white;
     }
     /* icoun container */
@@ -24,62 +25,48 @@
       align-items: center;
     }
     /* play icon */
-    .play_ {
+    .next_ {
       background-color: var(--icon_color);
       clip-path: polygon(0 0, 0% 100%, 100% 44%);
-      height: 40%;
-      width: 40%;
+      height: var(--rel_Size);
+      width: var(--rel_Size);
       position: absolute;
-      margin-left: 5%;
+      left: 30%;
       z-index: 5;
     }
-    /* pause icon */
-    .pause_ {
+    .next_hump_ {
       background-color: var(--icon_color);
-      height: 40%;
-      width: 40%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .middle_ {
-      background-color: var(--blue);
-      height: 100%;
-      width: 36%;
-    }
-    .none {
-      visibility: hidden;
+      clip-path: polygon(0 0, 0% 100%, 100% 44%);
+      height: var(--rel_Size);
+      width: var(--rel_Size);
+      position: absolute;
+      left: 50%;
+      z-index: 5;
     }
   </style>
   <div class="container_">
     <div class="round_">
-      <div class="play_"></div>
-      <div class="pause_">
-        <div class="middle_"></div>
-      </div>
+      <div class="next_"></div>
+      <div class="next_hump_"></div>
     </div>
   </div>
 
   <script>
     const icon_ = document.querySelector(`.round_`);
-    const play_btn_ = document.querySelector(`.play_`);
-    const pause_btn_ = document.querySelector(`.pause_`);
+    const next_btn_ = document.querySelector(`.next_`);
+    const netx_hump_ = document.querySelector(`.next_hump_`);
     const size = 40;
     const resize = 36;
 
-    pause_btn_.classList.add('none');
     //functions`
-    function change_to_pause() {
+    function resize_btn_() {
       play_btn_.style.width = `${size}%`;
       play_btn_.style.height = `${size}%`;
-
-      pause_btn_.classList.toggle('none');
-      play_btn_.classList.toggle(`none`);
     }
     function press_() {
-      play_btn_.style.width = `${resize}%`;
-      play_btn_.style.height = `${resize}%`;
-      setTimeout(change_to_pause, 150);
+      next_btn_.style.width = `${resize}%`;
+      next_btn_.style.height = `${resize}%`;
+      setTimeout(resize_btn_, 150);
     }
 
     // event listeners
