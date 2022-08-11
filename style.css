@@ -1,0 +1,48 @@
+:root {
+    --blue: rgb(42, 117, 230);
+    --size: 200px;
+}
+.container_{
+    background-color: rgba(0, 0, 0, 0);
+    width: var(--size);
+        height: var(--size);
+    position: relative;
+    clip-path: circle(50% at 50% 50%);
+}
+.round_{
+    background-color: var(--blue);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tri_{
+        background-color: white;
+        clip-path: polygon(0 0, 0% 100%, 100% 44%);
+            height: 40%;
+            width: 40%;
+            position: absolute;
+            margin-left: 5%;
+            z-index: 5;
+            visibility: hidden;
+}
+.pause_{
+            background-color: white;
+                height: 40%;
+                width: 40%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+}
+.middle_{
+background-color: var(--blue);
+height: 100%;
+width: 36%;
+
+}
+.none{
+    display: none;
+}
